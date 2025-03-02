@@ -21,7 +21,7 @@ const CopyJSX = () => {
         <Button
             variant="outline"
             onClick={copyToClipboard}
-            className="cursor-pointer transition-all duration-300"
+            className="cursor-pointer transition-all w-[124px] flex justify-between items-center duration-300"
         >
             {copied ? (
                 <>
