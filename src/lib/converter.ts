@@ -1,12 +1,10 @@
 import { toast } from "@/lib/toast";
 
-import HTMLtoJSX from "htmltojsx";
-
-const htmltojsx = new HTMLtoJSX({ createClass: false });
+import HTMLtoJSX from "./htmltojsx";
 
 export const converter = (html: string) => {
     try {
-        // const jsx = html;
+        const htmltojsx = new HTMLtoJSX({ createClass: false });
         const jsx = htmltojsx.convert(html);
         console.log(jsx);
         return jsx;
