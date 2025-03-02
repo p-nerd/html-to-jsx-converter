@@ -19,6 +19,7 @@
         "astro": "^5.4.1",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
+        "htmltojsx": "^0.3.0",
         "lucide-react": "^0.477.0",
         "next-themes": "^0.4.4",
         "react": "^19.0.0",
@@ -37,6 +38,7 @@
         ]
     },
     "devDependencies": {
+        "@types/htmltojsx": "^0.0.33",
         "prettier": "^3.5.2",
         "prettier-plugin-astro": "^0.14.1",
         "prettier-plugin-organize-imports": "^4.1.0",
