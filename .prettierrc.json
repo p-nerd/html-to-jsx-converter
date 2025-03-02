@@ -1,0 +1,32 @@
+{
+    "tabWidth": 4,
+    "printWidth": 100,
+    "trailingComma": "none",
+    "overrides": [
+        {
+            "files": "*.astro",
+            "options": {
+                "parser": "astro"
+            }
+        },
+        {
+            "files": "*.svg",
+            "options": {
+                "parser": "html",
+                "htmlWhitespaceSensitivity": "ignore"
+            }
+        },
+        {
+            "files": ["*.md"],
+            "options": {
+                "tabWidth": 4,
+                "proseWrap": "preserve"
+            }
+        }
+    ],
+    "plugins": [
+        "prettier-plugin-astro",
+        "prettier-plugin-tailwindcss",
+        "prettier-plugin-organize-imports"
+    ]
+}
