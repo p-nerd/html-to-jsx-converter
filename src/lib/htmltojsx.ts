@@ -13,9 +13,7 @@ enum NodeType {
 
 // Interface for configuration options
 interface HTMLtoJSXConfig {
-    createClass?: boolean;
     indent?: string;
-    outputClassName?: string;
 }
 
 // Interface for element attribute mapping
@@ -329,9 +327,7 @@ class HTMLtoJSX {
 
     constructor(config: HTMLtoJSXConfig = {}) {
         this.config = {
-            createClass: config.createClass !== undefined ? config.createClass : true,
-            indent: config.indent || "  ",
-            outputClassName: config.outputClassName
+            indent: config.indent || "  "
         };
     }
 
@@ -353,15 +349,6 @@ class HTMLtoJSX {
         const containerEl = document.createElement("div");
         containerEl.innerHTML = `\n${this._cleanInput(html)}\n`;
 
-        if (this.config.createClass) {
-            if (this.config.outputClassName) {
-                this.output = `const ${this.config.outputClassName} = () => {\n`;
-            } else {
-                this.output = `const Component = () => {\n`;
-            }
-            this.output += `${this.config.indent}return (\n`;
-        }
-
         if (this._onlyOneTopLevel(containerEl)) {
             // Only one top-level element, the component can return it directly
             this._traverse(containerEl);
@@ -373,16 +360,6 @@ class HTMLtoJSX {
         }
 
         this.output = this.output.trim() + "\n";
-
-        if (this.config.createClass) {
-            this.output += `${this.config.indent});\n`;
-            this.output += `};\n\n`;
-            this.output += this.config.outputClassName
-                ? `export default ${this.config.outputClassName};`
-                : `export default Component;`;
-        } else {
-            this.output = this._removeJSXClassIndention(this.output, this.config.indent as string);
-        }
 
         return this.output;
     }
