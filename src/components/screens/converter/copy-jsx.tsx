@@ -1,23 +1,39 @@
 import { toast } from "@/lib/toast";
 import { useConverter } from "@/states/converter";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { CopyIcon } from "lucide-react";
+import { ClipboardCheckIcon, CopyIcon } from "lucide-react";
 
 const CopyJSX = () => {
     const { jsx } = useConverter();
 
+    const [copied, setCopied] = useState(false);
+
     const copyToClipboard = () => {
         navigator.clipboard.writeText(jsx);
-        toast.success("Copied!", {
-            description: "JSX copied to clipboard."
-        });
+        setCopied(true);
+        toast.success("Copied!", { description: "JSX copied to clipboard." });
+        setTimeout(() => setCopied(false), 1500);
     };
 
     return (
-        <Button variant="outline" onClick={copyToClipboard} className="cursor-pointer">
-            <CopyIcon className="h-4 w-4 mr-2" />
-            Copy JSX
+        <Button
+            variant="outline"
+            onClick={copyToClipboard}
+            className="cursor-pointer transition-all duration-300"
+        >
+            {copied ? (
+                <>
+                    <ClipboardCheckIcon className="h-4 w-4 mr-2 text-green-500" />
+                    Copied!
+                </>
+            ) : (
+                <>
+                    <CopyIcon className="h-4 w-4 mr-2" />
+                    Copy JSX
+                </>
+            )}
         </Button>
     );
 };
