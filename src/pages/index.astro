@@ -1,9 +1,9 @@
 ---
-import { Button } from "@/components/ui/button";
+import { Converter } from "@/components/screens/converter";
 
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-    <Button>Hello</Button>
+<Layout class="flex h-screen max-h-screen w-full flex-col items-center justify-center">
+    <Converter client:load />
 </Layout>
