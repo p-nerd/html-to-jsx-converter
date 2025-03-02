@@ -32,7 +32,7 @@ const Converter = () => {
                     </div>
                     <div className="flex-1 @container">
                         <div className="flex justify-between items-center mb-2">
-                            <h3 className="text-lg font-medium">JSX Output</h3>
+                            <h3 className="text-lg font-medium">React JSX Output</h3>
                             {jsx && <CopyJSX />}
                         </div>
                         <Textarea
