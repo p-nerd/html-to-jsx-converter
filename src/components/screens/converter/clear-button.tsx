@@ -1,11 +1,15 @@
+import { useConverter } from "@/states/converter";
+import { toast } from "sonner";
+
 import { Button } from "@/components/ui/button";
 import { RefreshCwIcon } from "lucide-react";
 
 const ClearButton = () => {
+    const { setHtml } = useConverter();
+
     const clearAll = () => {
-        // setHtml("");
-        // setJsx("");
-        // toast("Cleared", { description: "All content has been cleared." });
+        setHtml("");
+        toast("Cleared", { description: "All content has been cleared." });
     };
 
     return (

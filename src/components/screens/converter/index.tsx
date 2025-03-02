@@ -1,30 +1,15 @@
-import { toast } from "@/lib/toast";
-import { useState } from "react";
+import { useConverter } from "@/states/converter";
 
+import { ThemeToogle } from "@/components/elements/theme-toogle";
 import { Card, CardContent } from "@/components/ui/card";
+import { Toaster } from "@/components/ui/sonner";
 import { Textarea } from "@/components/ui/textarea";
 
 import { ClearButton } from "./clear-button";
 import { CopyJSX } from "./copy-jsx";
-import { ThemeToogle } from "./theme-toogle";
 
 const Converter = () => {
-    const [html, setHtml] = useState<string>("");
-    const [jsx, setJsx] = useState<string>("");
-
-    const convertHtmlToJsx = () => {
-        try {
-            const result = html;
-            setJsx(result);
-            toast.success("Conversion Complete", {
-                description: "HTML has been converted to JSX."
-            });
-        } catch (error) {
-            toast.error("Conversion Error", {
-                description: "There was an error converting your HTML."
-            });
-        }
-    };
+    const { html, jsx, setHtml } = useConverter();
 
     return (
         <Card className="w-full max-w-7xl mx-auto">
@@ -59,6 +44,7 @@ const Converter = () => {
                     </div>
                 </div>
             </CardContent>
+            <Toaster />
         </Card>
     );
 };
