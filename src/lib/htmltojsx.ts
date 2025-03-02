@@ -222,13 +222,6 @@ function isEmpty(string: string): boolean {
 }
 
 /**
- * Determines if the CSS value can be converted from a 'px' suffixed string to a numeric value
- */
-function isConvertiblePixelValue(value: string): boolean {
-    return /^\d+px$/.test(value);
-}
-
-/**
  * Determines if the specified string/value is numeric
  */
 function isNumeric(input: any): boolean {
@@ -321,6 +314,7 @@ class StyleParser {
  */
 class HTMLtoJSX {
     private config: HTMLtoJSXConfig;
+
     private output: string = "";
     private level: number = 0;
     private _inPreTag: boolean = false;
@@ -627,4 +621,4 @@ class HTMLtoJSX {
     }
 }
 
-export default HTMLtoJSX;
+export { HTMLtoJSX };
