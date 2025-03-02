@@ -2,7 +2,7 @@ import { toast } from "@/lib/toast";
 
 import { HTMLtoJSX } from "./htmltojsx";
 
-const htmltojsx = new HTMLtoJSX();
+const htmltojsx = new HTMLtoJSX({ createClass: false });
 
 export const converter = (html: string) => {
     try {
