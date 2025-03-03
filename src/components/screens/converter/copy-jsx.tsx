@@ -1,13 +1,10 @@
 import { toast } from "@/lib/toast";
-import { useConverter } from "@/states/converter";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { ClipboardCheckIcon, CopyIcon } from "lucide-react";
 
-const CopyJSX = () => {
-    const { jsx } = useConverter();
-
+const CopyJSX = ({ jsx }: { jsx: string }) => {
     const [copied, setCopied] = useState(false);
 
     const copyToClipboard = () => {

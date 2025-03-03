@@ -1,12 +1,11 @@
-import { useConverter } from "@/states/converter";
+import type { Dispatch, SetStateAction } from "react";
+
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { RefreshCwIcon } from "lucide-react";
 
-const ClearButton = () => {
-    const { setHtml } = useConverter();
-
+const ClearButton = ({ setHtml }: { setHtml: Dispatch<SetStateAction<string>> }) => {
     const clearAll = () => {
         setHtml("");
         toast("Cleared", { description: "All content has been cleared." });
