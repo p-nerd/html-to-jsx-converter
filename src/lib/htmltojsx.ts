@@ -223,12 +223,12 @@ function isEmpty(string: string): boolean {
     return !/[^\s]/.test(string);
 }
 
-/**
- * Determines if the CSS value can be converted from a 'px' suffixed string to a numeric value
- */
-function isConvertiblePixelValue(value: string): boolean {
-    return /^\d+px$/.test(value);
-}
+///**
+// * Determines if the CSS value can be converted from a 'px' suffixed string to a numeric value
+// */
+//function isConvertiblePixelValue(value: string): boolean {
+//    return /^\d+px$/.test(value);
+//}
 
 /**
  * Determines if the specified string/value is numeric

@@ -10,6 +10,7 @@
         "shadcn": "shadcn"
     },
     "dependencies": {
+        "@astrojs/check": "^0.9.4",
         "@astrojs/react": "^4.2.1",
         "@astrojs/vercel": "^8.1.0",
         "@radix-ui/react-slot": "^1.1.2",
@@ -26,7 +27,8 @@
         "sonner": "^2.0.1",
         "tailwind-merge": "^3.0.2",
         "tailwindcss": "^4.0.9",
-        "tailwindcss-animate": "^1.0.7"
+        "tailwindcss-animate": "^1.0.7",
+        "typescript": "^5.8.2"
     },
     "devDependencies": {
         "@types/htmltojsx": "^0.0.33",
