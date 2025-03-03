@@ -18,17 +18,24 @@ const CopyJSX = ({ jsx }: { jsx: string }) => {
         <Button
             variant="outline"
             onClick={copyToClipboard}
-            className="cursor-pointer transition-all w-[124px] flex justify-between items-center duration-300"
+            disabled={copied}
+            className={`cursor-pointer w-[124px] flex justify-between items-center transition-all duration-300 ease-in-out`}
         >
             {copied ? (
                 <>
-                    <ClipboardCheckIcon className="h-4 w-4 mr-2 text-green-500" />
-                    Copied!
+                    <ClipboardCheckIcon
+                        className="h-4 w-4 mr-2 text-green-500
+                            animate-in fade-in-50 duration-200"
+                    />
+                    <span className="animate-in fade-in-50 duration-300">Copied!</span>
                 </>
             ) : (
                 <>
-                    <CopyIcon className="h-4 w-4 mr-2" />
-                    Copy JSX
+                    <CopyIcon
+                        className="h-4 w-4 mr-2
+                            transition-opacity duration-300"
+                    />
+                    <span className="transition-opacity duration-300">Copy JSX</span>
                 </>
             )}
         </Button>
