@@ -1,6 +1,7 @@
 ---
 import { Converter } from "@/components/screens/converter";
 
+import GithubIcon from "@/components/icons/github-icon.astro";
 import Layout from "@/layouts/Layout.astro";
 
 const title = "Modern HTML to React JSX converter";
@@ -13,6 +14,17 @@ const description =
     description={description}
     class="flex w-full flex-col items-center justify-center py-10"
 >
+    <div class="absolute top-4 right-4 md:top-6 md:right-6">
+        <a
+            href="https://github.com/p-nerd/html-to-jsx-converter"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"
+        >
+            <GithubIcon />
+            <span>GitHub</span>
+        </a>
+    </div>
     <h2 class="mb-2 text-xl font-bold sm:text-2xl md:text-3xl">{title}</h2>
     <p
         class="mb-6 max-w-md px-4 text-center text-sm text-gray-600 sm:max-w-lg sm:px-6 sm:text-base md:max-w-4xl dark:text-gray-400"
@@ -21,7 +33,7 @@ const description =
     </p>
     <Converter client:load />
     <footer
-        class="mt-10 w-full py-4 text-center text-sm text-gray-600 dark:border-gray-700 dark:text-gray-400"
+        class="mt-5 w-full py-4 text-center text-sm text-gray-600 dark:border-gray-700 dark:text-gray-400"
     >
         <div class="container mx-auto px-4">
             <p>
